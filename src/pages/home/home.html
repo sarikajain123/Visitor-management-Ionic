@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="header-color">Society Name</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="background">
+  </div>
+
+
+  <!-- <div class="addVisitor-div">
+    <div>
+      <label>Contact No</label>
+      <input [(ngModel)]="username" type="text" value="">
+    </div>
+    <div>
+      <button class="btn-addVisitor">Add Visitor</button>
+    </div>
+  </div> -->
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Contact Number</ion-label>
+      <ion-input id="contactNo" type="number" value="" #contact></ion-input>
+    </ion-item>
+    <ion-item>
+      <button class="btn-addVisitor" (click)="checkin(contact.value)">CheckIn</button>
+    </ion-item>
+    <ion-item>
+      <button class="btn-addVisitor" (click)="checkOut(contact.value)">CheckOut</button>
+    </ion-item>
+    <ion-item>
+      <button class="btn-addVisitor" (click)="showFingerprintAuthDlg()">Add fingerprint </button>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header>
+      <span style="float: left; font-size: 20px;">
+        Recent Visitors
+      </span>
+      <span style="float: right; font-size: 20px;">
+        <i class="fa fa-repeat" (click)="refresh()"></i>
+      </span>
+    </ion-list-header>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-item *ngFor="let p of allVisitors" (click)="itemTapped($event, p)">
+      <ion-avatar item-start>
+        <img *ngIf="!p.photo" src="../../assets/imgs/profile.png">
+        <img *ngIf="p.photo" src="{{p.photo}}">
+      </ion-avatar>
+      <!-- <ion-icon name="contact"></ion-icon> -->
+      <h2>
+        <span>
+          Name: {{p.name}}
+        </span>
+      </h2>
+      <!-- <h3>{{p.flatNo}}</h3> -->
+      <h2>
+        <span>
+          Mobile: {{p.phone}}
+        </span>
+      </h2>
+      <h3>
+        <span>
+          Last checkIn :{{p.check_in}}
+        </span>
+      </h3>
+
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

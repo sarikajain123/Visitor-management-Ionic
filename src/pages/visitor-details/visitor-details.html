@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title class="header-color">Visitor Details</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+ 
+<div class="signup-w3ls">
+  <div class="signup-agile1">
+      <img *ngIf='!userList.image_url' height="100" width="100"  class="defaultImg" src="{{displayPic}}" alt="Image">
+    <img *ngIf='userList.image_url' height="100" width="100" id="profile" src="{{userList.image_url}}" alt="profile-image"/>
+    <!-- <i id="profile" class="fa fa-user-circle-o" aria-hidden="true" style="font-size:36px"></i> -->
+  </div>
+
+  <form #visitorForm="ngForm">
+    <!-- <input type="hidden" name="$key" #$key="ngModel"> -->
+    <div class="form-group">
+      <!-- <label class="header">Visitor Photo:</label> -->
+
+      <button class="add-button" (click)="cameraTakePicture()">Update Photo</button>
+      <!-- <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture (change)="readURL($event)"> -->
+    </div>
+    <div class="form-group">
+      <label>Name</label>&nbsp;&nbsp;
+      <input class="form-control" name="name"   value="{{userList.name}}"
+        required>
+    </div>
+    <div class="form-group">
+      <label>MobileNo</label>&nbsp;&nbsp;
+      <input class="form-control" name="mobileNo"   value=" {{userList.phone}}">
+    </div>
+    <div class="form-group">
+      <label>VehicleNo</label>&nbsp;&nbsp;
+      <input class="form-control" name="vehicleNo" 
+      value="{{userList.vehicle_number}}">
+    </div>
+    <div class="form-group">
+      <label> Address</label>&nbsp;&nbsp;
+      <input class="form-control" name="vAddress"  value="{{userList.coming_from}}">
+    </div>
+    <div class="form-group">
+      <label>To Meet</label>&nbsp;&nbsp;
+      <input class="form-control" name="flatNo" value="{{userList.to_meet}}">
+    </div>
+    <div class="form-group">
+      <label> Type</label>&nbsp;&nbsp;
+      <!-- <select class="vtype" required [(ngModel)]="societyService.selectedEmployee.type">
+        <option  *ngFor='let option of options' [value]="option">{{option}}</option>
+      </select> -->
+      <input  name="type"  value="{{userList.representing}}">
+    </div>
+    <!-- <div class="form-group">
+      <button class="btn btn-default btn-submit-reset" type="button"  (click)="checkIn()">
+        CheckIn</button>
+    </div> -->
+    <div class="form-group">
+      <button class="btn btn-default btn-submit-reset" type="button" [disabled]="!visitorForm.valid" (click)="onEdit(visitorForm.value)">
+        Update</button>
+    </div>
+    <!-- <div class="form-group">
+        <button class="btn btn-default btn-submit-reset" type="button" (click)="onDelete(userList.$key)">
+        
+          Delete</button>
+    </div> -->
+    
+  </form>
+</div>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+<img src="{{userList.image}}" alt="Photo" style="width:100%">
+</div>
+<table class="table table-sm table-hover"> -->
+<!-- <tr>
+  <div class="subheading">
+    Visitor Photo :
+  </div>
+  
+</tr> -->
+<!-- <tr class="row">
+  <div class="subheading">
+    Name :
+  </div>
+  <td> -->
+    <!-- <textarea name="" id="" cols="30" rows="10">
+        {{userList.name}}
+    </textarea> -->
+    <!-- <input name="name" #name="ngModel" [(ngModel)]="societyService.selectedEmployee.name" placeholder="{{userList.name}}">
+  </td>
+</tr>
+<tr class="row">
+  <div class="subheading">
+    mobile No :
+  </div>
+  <td>
+    <input name="mobileNo" #mobileNo="ngModel" [(ngModel)]="societyService.selectedEmployee.mobileNo" placeholder="{{userList.mobileNo}}">
+  </td>
+</tr>
+<tr class="row">
+  <div class="subheading">
+    vehicle No :
+  </div>
+  <td>
+    <input name="vehicleNo" #vehicleNo="ngModel" [(ngModel)]="societyService.selectedEmployee.vehicleNo" placeholder="{{userList.vehicleNo}}">
+  </td>
+</tr>
+<tr class="row">
+  <div class="subheading">
+    Flat No :
+  </div>
+  <td>
+      <input class="form-control" name="flatNo" #flatNo="ngModel" [(ngModel)]="societyService.selectedEmployee.flatNo" placeholder="{{userList.flatNo}}">
+    </td>
+
+</tr>
+<tr class="row">
+  <div class="subheading">
+    Visitor Address :
+  </div>
+  <td>
+    <input class="form-control" name="vAddress" #vAddress="ngModel" [(ngModel)]="societyService.selectedEmployee.vAddress" placeholder="{{userList.VAddress}}">
+  </td>
+</tr>
+<tr class="row">
+  <div class="subheading">
+    Visitor Type :
+  </div>
+  <td>
+    <input type="text" placeholder=" {{userList.type}}"> 
+    </td>
+</tr>
+<tr>
+  <td> -->
+    <!-- <a class="btn" (click)="onEdit(employee)">
+   <i class="fa fa-pencil-square-o font-icons"></i>
+    </a>
+    <a class="btn" (click)="onDelete(employee.$key)">
+     <i class="fa fa-trash-o font-icons"></i>
+    </a> -->
+  <!-- </td>
+</tr>
+</table>
+<div>
+<button type="button" class="btn" (click)="onEdit(employee)">
+  Update
+</button>
+</div>
+<div>
+<button type="button" class="btn" (click)="onDelete(employee.$key)">
+  Delete
+</button>
+</div> -->

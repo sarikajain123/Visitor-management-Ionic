@@ -1,0 +1,7 @@
+{
+  "name": "visitorApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

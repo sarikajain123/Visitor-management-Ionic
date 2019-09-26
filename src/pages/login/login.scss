@@ -1,0 +1,44 @@
+
+
+.login-background {
+    background: url("../../assets/imgs/loginBg.jpg") no-repeat fixed center;
+    background-size: cover;
+    
+  }
+
+
+.signIn{
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.login-user-pass{
+    padding: 10px
+}
+
+.login{
+    padding: 5%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 5%;
+}
+
+
+// .login-divs{
+//     // padding: 10%
+// }
+
+// mobile
+// padding: 10%;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     -webkit-transform: translate(-50%, -50%);
+//     transform: translate(-50%, -50%);
+//     background: white;
+//     border-radius: 5%;
+//     height: 51%;
+//     width: 75%;

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="header-color">Flat Details : {{flatdetails.flatNo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="list">
+    <div class="item item-divider">Owner Name : {{flatdetails.name}}</div>
+    <div class="item item-divider">Owner Contact No : {{flatdetails.mobileNo}}</div>
+  </div>
+  <h4>Visitor List</h4>
+
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-list>
+      <div ion-item *ngFor="let item of flatdetails.visitor" (click)="itemTapped($event, item)">
+          <ion-avatar item-start>
+              <img src="{{item.image}}">
+          </ion-avatar>
+          <div class="item item-divider">Name: {{item.name}}
+              <div class="item">Contact No: {{item.contact}}</div>
+          </div>
+      </div>
+    <!-- <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.flatNo}}
+    </button> -->
+  </ion-list>
+<!-- 
+  <ion-list>
+    <div ion-item *ngFor="let item of flatdetails.visitor" (click)="itemTapped($event, item)">
+        <ion-avatar item-start>
+            <img src="{{item.image}}">
+        </ion-avatar>
+        <div class="item item-divider">Name: {{item.name}}
+            <div class="item">Contact No: {{item.contact}}</div>
+        </div>
+    </div>
+  </ion-list> -->
+
+<!-- 
+  <div class="list">
+    <div *ngFor="let item of flatdetails.visitor" (click)="itemTapped($event, item)" class="item item-divider">{{item.name}}
+      <div class="item">{{item.contact}}</div>
+    </div>
+  </div> -->
+</ion-content>

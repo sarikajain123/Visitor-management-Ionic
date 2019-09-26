@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title class="header-color">Visitor Proof</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="login-background">
+  <div class="login">
+    <div  class="login-divs">
+      <label>Society Name</label>
+      <input class="login-user-pass" [(ngModel)]="username" type="text" value="">
+    </div>
+    <div class="login-divs">
+      <label>Password</label>
+      <input class="login-user-pass" [(ngModel)]="password" type="password" value="">
+    </div>
+    <div class="login-divs">
+      <button class="signIn login-user-pass" (click)="login()">Sign In</button>
+    </div>
+  </div>
+</ion-content>

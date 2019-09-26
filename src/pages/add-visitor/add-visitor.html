@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="header-color">Add Visitor</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <div class="signup-w3ls">
+    <div class="signup-agile1">
+      <!-- <ion-img height="100" width="100" [src]="profileImage" alt="Image" alt="profileImage"></ion-img> -->
+      <img height="100" width="100" id="profile" src="{{displayPic}}" alt="Image">
+    </div>
+
+    <form #visitorForm="ngForm">
+      <div class="form-group">
+        <button class="add-button" (click)="actionSheet()">Add Photo</button>
+      </div>
+      <!-- <div class="form-group">
+      <label>image</label>&nbsp;&nbsp;
+      <input type="file" class="form-control" name="image" #image placeholder="image"
+        required ngModel (change)="fileChange($event)">
+    </div> -->
+      <div class="form-group">
+        <label>Name</label>&nbsp;&nbsp;
+        <input class="form-control" name="name" #name placeholder="Full Name" required ngModel>
+      </div>
+      <div class="form-group">
+        <label>MobileNo</label>&nbsp;&nbsp;
+        <input type="number" minlength="10" maxlength="10" class="form-control" name="mobileNo" #mobileNo placeholder="MobileNo"
+          required [(ngModel)]='mobile'>
+      </div>
+      <div class="form-group">
+        <label>email Id</label>&nbsp;&nbsp;
+        <input class="form-control" name="email" #email placeholder="Email Id" ngModel>
+      </div>
+      <div class="form-group">
+        <label>VehicleNo</label>&nbsp;&nbsp;
+        <input class="form-control" name="vehicleNo" #vehicleNo placeholder="vehicleNo" ngModel>
+      </div>
+      <div class="form-group">
+        <label>Visitor Address</label>&nbsp;&nbsp;
+        <input class="form-control" name="vAddress" #vAddress placeholder="Visitor Address" ngModel>
+      </div>
+      <div class="form-group">
+        <label>Flat No</label>&nbsp;&nbsp;
+        <input class="form-control" name="flatNo" #flatNo placeholder="flat No" ngModel>
+      </div>
+      <div class="form-group">
+        <label>Visitor Type</label>&nbsp;&nbsp;
+        <select class="vtype" name="vtype" required ngModel>
+          <option *ngFor='let option of options' [value]="option">{{option}}</option>
+        </select>
+        <!-- <input class="form-control" name="type" #type="ngModel" [(ngModel)]="societyService.selectedEmployee.type" placeholder="SocietyMember/Visitor/Staff"> -->
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default btn-submit-reset" type="button" (click)='sendMsg()'>Verify MobileNo</button>
+      </div>
+      <div class="form-group">
+        <input *ngIf="otp" class="form-control" type="number" name="validateOtp" placeholder="Enter OTP" ngModel>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-default btn-submit-reset" type="submit" (click)="Submit(visitorForm.value)">
+          <i class="fa fa-floppy-o"></i>
+          Submit</button>
+        <!-- <button class="btn btn-default btn-submit-reset" type="submit" [disabled]="!visitorForm.valid">
+            <i class="fa fa-floppy-o"></i>
+            Submit</button> -->
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default btn-submit-reset" type="button" (click)="resetForm(visitorForm)">
+          <i class="fa fa-repeat"></i>
+          Reset</button>
+      </div>
+
+    </form>
+  </div>
+</ion-content>

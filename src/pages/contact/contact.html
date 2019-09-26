@@ -1,0 +1,81 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="header-color">Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <ion-list>
+    <div *ngFor="let item of getSocietyContact">
+      <div class="bar bar-subheader subheader-color">
+        <h2 class="title"> {{item.supervisor}}</h2>
+      </div>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{defaultImage}}">
+        </ion-avatar>
+        <h2>Name: {{item.name}}</h2>
+        <h3>Contact: 123456789</h3>
+      </ion-item>
+    </div>
+  </ion-list>
+
+</ion-content>
+
+
+
+<!-- 
+<div class="bar bar-subheader subheader-color">
+  <h2 class="title">Manager</h2>
+</div>
+<ion-item>
+<ion-avatar item-start>
+  <img src="{{getSocietyContact.Manager.image}}">
+</ion-avatar>
+<h2>Name: {{getSocietyContact.Manager.name}} </h2>
+<h3>Contact: {{getSocietyContact.Manager.contact}}</h3>
+</ion-item>
+
+<div class="bar bar-subheader subheader-color">
+  <h2 class="title">AssistantManager</h2>
+</div>
+<ion-item>
+<ion-avatar item-start>
+  <img src="{{getSocietyContact.AssistantManager.image}}">
+</ion-avatar>
+<h2>Name: {{getSocietyContact.AssistantManager.name}} </h2>
+<h3>Contact: {{getSocietyContact.AssistantManager.contact}}</h3>
+</ion-item>
+
+
+<div class="bar bar-subheader subheader-color">
+  <h2 class="title">President</h2>
+</div>
+<ion-item>
+<ion-avatar item-start>
+  <img src="{{getSocietyContact.President.image}}">
+</ion-avatar>
+
+<h2>Name: {{getSocietyContact.President.name}} </h2>
+<h3>Contact: {{getSocietyContact.President.contact}}</h3>
+</ion-item>
+
+
+<div class="bar bar-subheader subheader-color">
+  <h2 class="title">Emergency</h2>
+</div>
+<ion-item>
+<ion-avatar item-start>
+  <img src="{{getSocietyContact.Manager.image}}">
+</ion-avatar>
+<h2>Name: {{getSocietyContact.Emergency.name}} </h2>
+<h3>Contact: {{getSocietyContact.Emergency.contact}}</h3>
+</ion-item> -->
